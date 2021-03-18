@@ -1,11 +1,13 @@
 import configparser
 import requests
 from bs4 import BeautifulSoup
+import logging
  
 def getAccessToken():
     config=configparser.ConfigParser()
     config.read('config.ini')
     return config['Client_Access_Token']['token']
+
 
 
 token = getAccessToken()
@@ -41,6 +43,7 @@ def getLyricsArray(name):
         lyrics_array.append(song["url"])
     return lyrics_array
 
+
 def scrapeLyricText(name): 
     links = getLyricsArray(name)
     song_lyrics = []
@@ -57,5 +60,4 @@ def scrapeLyricText(name):
         song_lyrics.append(current_lyrics)
     return song_lyrics
 
-
-
+scrapeLyricText("Drake")
