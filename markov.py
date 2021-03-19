@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from random import randint
 
 
@@ -25,7 +24,7 @@ class MarkovLyrics:
         start_index = randint(0, n-1)
         keys = list(self.chain.keys())
         current_word = keys[start_index].title()
-        print(current_word)
+
 
         lyrics = current_word + " " 
         for _ in range(length): 
@@ -41,5 +40,3 @@ class MarkovLyrics:
                 current_word = next_word
 
         return lyrics
-=======
->>>>>>> parent of 4d6219f (kind've working kinda i need to committ more for version history)

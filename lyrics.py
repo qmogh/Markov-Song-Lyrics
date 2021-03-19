@@ -54,17 +54,8 @@ def scrapeLyricText(name):
         lyrics_div = soup.find(class_="lyrics")
         anchor_tags = lyrics_div.find_all('a')
         current_lyrics = []
-        for anchor in anchor_tags:
-            if len(anchor.text) > 0 and anchor.text[0] != "[":
-                text=anchor.text("\n", " NEWLINE ")
-                current_lyrics.append(text)
+        for anchor in anchor_tags: 
+            text = anchor.text
+            current_lyrics.append(text)
         song_lyrics.append(current_lyrics)
-<<<<<<< HEAD
-
     return song_lyrics
-=======
-    return song_lyrics
-
-
-print(scrapeLyricText("Drake")) 
->>>>>>> parent of 4d6219f (kind've working kinda i need to committ more for version history)
