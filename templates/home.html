@@ -13,7 +13,9 @@
         <input type="text" id="search" name="search" placeholder="Search for an artist...">
         <input type="submit">
     </form>
-    <p>{{lyrics}}</p>
+    {% for lyric in lyrics %}
+        <p>{{lyrics}}</p>
+    {% endfor %}
 
  
 
