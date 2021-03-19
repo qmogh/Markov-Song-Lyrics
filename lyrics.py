@@ -59,5 +59,12 @@ def scrapeLyricText(name):
                 text=anchor.text("\n", " NEWLINE ")
                 current_lyrics.append(text)
         song_lyrics.append(current_lyrics)
+<<<<<<< HEAD
 
     return song_lyrics
+=======
+    return song_lyrics
+
+
+print(scrapeLyricText("Drake")) 
+>>>>>>> parent of 4d6219f (kind've working kinda i need to committ more for version history)

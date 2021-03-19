@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from random import randint
 
 
@@ -40,3 +41,5 @@ class MarkovLyrics:
                 current_word = next_word
 
         return lyrics
+=======
+>>>>>>> parent of 4d6219f (kind've working kinda i need to committ more for version history)
