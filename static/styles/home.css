@@ -1,0 +1,55 @@
+#form {
+    font-size:24px;
+    font-family: "sans-serif"
+}
+
+#submit {
+    color: white;
+    background-color:#5f4b8bFf;
+    padding:5px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+
+}
+
+
+#lyrics {
+    background-color:#e69a8dff;
+    padding:5px 20px;
+    border: 2px solid red;
+    /* #DF6589ff ? */
+    border-radius: 5px;
+    margin: 20px;
+
+}
+
+body {
+    text-align: center;
+    background-color: #5f4b8bFf;
+    font-family: "Avenir Next", serif;
+    font-weight: normal;
+
+
+}
+
+
+h1 {
+    color:antiquewhite;
+    font-size: 24px;
+    margin: 0;
+    font-weight: normal;
+
+}
+
+h6 {
+    color:blue;
+    font-size: 24px;
+    margin: 0;
+    font-weight: normal;
+ 
+}
+
+p {
+    color:bisque;
+    font-size: 16px;
+}

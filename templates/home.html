@@ -9,13 +9,15 @@
 </head>
 <body>
     <h1>Welcome to Lyrics Generator!</h1>
-    <p> Here, you can generate lyrics by the artist of your choice</p>
-    <form action="{{url_for('lyricsGenerator') }}" method="post">
+    <h6>Here, you can generate lyrics by the artist of your choice</h6>
+    <form action="{{url_for('lyricsGenerator') }}" method="post" id="form">
         <input type="text" id="search" name="search" placeholder="Search for an artist...">
-        <input type="submit">
+        <input type="submit" id="submit">
     </form>
-{% for lyrics in lyrics %}
-    <p>{{lyrics}}</p>
-{% endfor %}
+<div id="lyrics"
+    {% for lyrics in lyrics %}
+        <p>{{lyrics}}</p>
+    {% endfor %}
+</div>
 </body>
 </html>
