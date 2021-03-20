@@ -55,7 +55,8 @@ def scrapeLyricText(name):
         anchor_tags = lyrics_div.find_all('a')
         current_lyrics = []
         for anchor in anchor_tags: 
-            text = anchor.text
-            current_lyrics.append(text)
+            if len(anchor.text) > 0 and anchor.text[0] !="[":
+                text = anchor.text.replace("\n", " NEWLINE ")
+                current_lyrics.append(text)
         song_lyrics.append(current_lyrics)
     return song_lyrics

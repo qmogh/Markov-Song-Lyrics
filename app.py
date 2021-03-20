@@ -1,18 +1,21 @@
 from flask import Flask, render_template, request
 from lyrics import scrapeLyricText
 from markov import MarkovLyrics
+
+
 app = Flask(__name__)
 def generateArtistLyrics(name):
     songs = scrapeLyricText(name)
     m = MarkovLyrics()
     for song in songs: 
         m.populateMarkovChain(song)
-    return m.generateLyrics()
+    lyrics = m.generateLyrics()
+    return lyrics.split("NEWLINE")
     
 
 @app.route('/', methods=['GET', 'POST'])
 def lyricsGenerator():
-    lyrics = ""
+    lyrics = []
     if request.method == "POST":
         artist=request.form['search']
         lyrics = generateArtistLyrics(artist)
