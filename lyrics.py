@@ -12,17 +12,20 @@ def getAccessToken():
 
 token = getAccessToken()
 
+## Get Artist Name from Genius API
 def searchMusicArtist(name): 
     api_url = "https://api.genius.com/search?q={}".format(name)
     headers = {"authorization": token}
     r = requests.get(api_url, headers=headers)
     return r.json()
 
+## Get Artist ID Attached to Name
 def getArtistID(name):
     r = searchMusicArtist(name)
     id = r["response"]["hits"][0]["result"]["primary_artist"]["id"]
     return id 
 
+## Get Top Ten Songs Using ID
 def getTopTenSongs(name): 
     id = getArtistID(name)
     api_url = "https://api.genius.com/artists/{}/songs".format(id)     
@@ -35,6 +38,7 @@ def getTopTenSongs(name):
     r = requests.get(api_url, headers=headers, params=params)
     return r.json() 
 
+## Generate Array of Links to Lyric Pages From Topo 10 Songs
 def getLyricsArray(name): 
     r = getTopTenSongs(name)
     songs = r["response"]["songs"] 
@@ -43,7 +47,7 @@ def getLyricsArray(name):
         lyrics_array.append(song["url"])
     return lyrics_array
 
-
+## Scrape Lyric Text from Lyric Pages
 def scrapeLyricText(name): 
     links = getLyricsArray(name)
     song_lyrics = []
